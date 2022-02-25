@@ -6,6 +6,7 @@ app_name = 'vendor'
 urlpatterns = [
 
     path('', homePage, name='homePage'),
+    path('dashboard', admin_dashboard, name='admin_dashboard'),
     path('vendor/lists', vendor_List, name='vendor_list'),
     path('vendor/setup', vendor_Setup, name='vendor_setup'),
      path('vendor/setup/<int:pk>/', vendor_Setup, name='vendor_update'),

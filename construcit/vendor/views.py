@@ -9,8 +9,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def homePage(request):
-    return render(request, 'vendor/dashboard.html')
+    return render(request, 'vendor/home.html')
 
+def admin_dashboard(request):
+    return render(request, 'vendor/dashboard.html') 
 
 def vendor_List(request):
     employee_list = User.objects.all()

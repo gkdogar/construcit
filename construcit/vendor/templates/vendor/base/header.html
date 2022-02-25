@@ -10,7 +10,7 @@
             </li>
 
             <li class="sidebar-item " id="dashboard">
-                <a class="sidebar-link"href="#">
+                <a class="sidebar-link"href="{% url 'vendor:admin_dashboard' %}">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
@@ -32,15 +32,15 @@
 
                 Users Control
             </li>
-            <li class="sidebar-item" id="employee_page">
-                <a data-target="#employee_control" data-toggle="collapse" class="sidebar-link collapsed">
+            <li class="sidebar-item" id="Vendor_page">
+                <a data-target="#vendor_control" data-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span
                         class="align-middle">Vendor Action</span>
                 </a>
-                <ul id="employee_control" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                    <li class="sidebar-item " id="emp_list"><a class="sidebar-link" href="{% url 'vendor:vendor_list'%}">Vendor List</a>
+                <ul id="vendor_control" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                    <li class="sidebar-item " id="vend_list"><a class="sidebar-link" href="{% url 'vendor:vendor_list'%}">Vendor List</a>
                     </li>
-                    <li class="sidebar-item" id="emp_setup"><a class="sidebar-link" href="{% url 'vendor:vendor_setup'%}">Vendor
+                    <li class="sidebar-item" id="vend_setup"><a class="sidebar-link" href="{% url 'vendor:vendor_setup'%}">Vendor
                         Setup</a></li>
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/approved/">ApprovedSellers</a></li>#}
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/rejected/">RejectedSellers</a></li>#}
@@ -49,10 +49,10 @@
                 </ul>
             </li>
 
-             <li class="sidebar-item" id="dukandar_page">
+             {% comment %} <li class="sidebar-item" id="dukandar_page">
                 <a data-target="#dukandar_control" data-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span
-                        class="align-middle">Dhukandar Action</span>
+                        class="align-middle">DhukandaVendor Action</span>
                 </a>
                 <ul id="dukandar_control" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                     <li class="sidebar-item" id="du_list"><a class="sidebar-link" href="#">Dukandar List</a>
@@ -66,7 +66,7 @@
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/return/">Returned to sellerfor Reviews</a></li>#}
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/defaulters/">Defaulters</a></li>#}
                 </ul>
-            </li>
+            </li> {% endcomment %}
              <li class="sidebar-item" id="customer_page">
                 <a data-target="#customer_control" data-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span
@@ -85,7 +85,7 @@
             </li>
 
 
-            <li class="sidebar-header active" id ="product_tabs">
+            {% comment %} <li class="sidebar-header active" id ="product_tabs">
                 Product's Control
             </li>
             <li class="sidebar-item" id="parent_cat">
@@ -126,7 +126,7 @@
                         href="#">Product List</a></li>
 
                 </ul>
-            </li>
+            </li> {% endcomment %}
 
             {% comment %} <li class="sidebar-item">
                 <a data-target="#ui_support" data-toggle="collapse" class="sidebar-link collapsed">
@@ -159,7 +159,7 @@
                     <li class="sidebar-item"><a class="sidebar-link" href="">Seller Picks</a></li>
                 </ul>
             </li> {% endcomment %}
-              <li class="sidebar-header">
+              {% comment %} <li class="sidebar-header">
                Orders
             </li>
             <li class="sidebar-item " id="order_page">
@@ -190,7 +190,7 @@
             </li>
 
         </ul>
-      </li>
+      </li> {% endcomment %}
         </ul>
     </div>
 </nav>

@@ -10,7 +10,7 @@
 {% block content %}
 
 <div class="container">
-  <h1 class="text-center mt-5 mb-5 font-weight-bold">Employee Setup</h1>
+  <h1 class="text-center mt-5 mb-5 font-weight-bold">Vendor Setup</h1>
     {% if messages %}
     {% for message in messages %}
         <div {% if message.tags %}class="alert alert-{{ message.tags }}" {% endif %} role="alert">
@@ -21,7 +21,7 @@
 
 
     <div class="row col-2 offset-10">
-        <a type="submit" href="{% url 'vendor:vendor_list' %}" class="btn btn-primary float-right mb-1" name="employee">Employee Lists</a>
+        <a type="submit" href="{% url 'vendor:vendor_list' %}" class="btn btn-primary float-right mb-1" name="vendors">Vendor Lists</a>
      
     </div>
     <form action="{% if vend_id %}{% url 'vendor:vendor_setup' vend_id %}{% else %}{% url 'vendor:vendor_setup' %} {% endif %}" method="post">
@@ -86,38 +86,38 @@
                   value="{{user.city}}">
         </div>
         <div class="form-group mt-1">
-            <label for="exampleInputarea_designated">Area Designate</label>
-            <input type="text" class="form-control" id="area_designated"  name="area_designated" value="{{area_designated}}">
+            <label for="exampleInputarea_designated">Business Name</label>
+            <input type="text" class="form-control" id="area_designated"  name="business" value="{{business_name}}">
           </div>
-          <div class="form-group mt-1">
+          {% comment %} <div class="form-group mt-1">
             <label for="exampleInputtarget_assign">Target Assign</label>
             <input type="text" class="form-control" id="target_assign"  name="target_assign" value="{{target_assign}}">
           </div>
           <div class="form-group mt-1">
             <label for="exampleInputtarget_achieved">Target Achieved</label>
             <input type="text" class="form-control" id="target_achieved"  name="target_achieved" value="{{target_achieved}}">
-          </div>
+          </div> {% endcomment %}
           <div class="form-check mt-4">
             <input type="checkbox" class="form-check-input checkbox" id="is_active"
             name="is_active" {% if is_active %} checked
             value="True"   {% endif %} value="False">
-            <label class="form-check-label" for="exampleCheck1" name="is_active">Is Active Employee</label>
+            <label class="form-check-label" for="exampleCheck1" name="is_active">Is Active Vendor</label>
           </div>
           
       </div>
     </div>
-    <button type="submit" class="btn btn-primary float-right mt-1">Submit</button>
+    <button type="submit" class="btn btn-primary float-right mt-1">Add</button>
 </form>
   </div>
 
 
         <script>
         $(document).ready(function () {
-            $('ul').find("li#employee_page").addClass("active");
-            $('ul').find("li#employee_page").find("a").addClass("collapsed");
-            $('ul').find("li#employee_page").find("a").attr("aria-expanded","true");
-            $('ul#employee_control').addClass('show')
-            $('#emp_setup').addClass('active')
+            $('ul').find("li#vendor_page").addClass("active");
+            $('ul').find("li#vendor_page").find("a").addClass("collapsed");
+            $('ul').find("li#vendor_page").find("a").attr("aria-expanded","true");
+            $('ul#vendor_control').addClass('show')
+            $('#vend_setup').addClass('active')
             setTimeout(function() {
               $('div.alert').fadeOut('slow');
           }, 5000);
