@@ -12,7 +12,11 @@ from django.contrib.auth.decorators import login_required
 
 
 def homePage(request):
-    return render(request, 'vendor/base/home.html')
+    vendor_list=Vendor.objects.filter(is_active=True)
+    conext ={
+        'vendor_list':vendor_list
+    }
+    return render(request, 'vendor/base/home.html',conext)
 
 @login_required(login_url='vendor:admin_login')
 def admin_dashboard(request):
