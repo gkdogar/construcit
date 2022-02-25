@@ -185,18 +185,20 @@
 <!-- First Brand start  -->
 
 
+                    {% for vendor in vendor_list %}
+                         
 
-<div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6">
                         <div class="as-item">
                             <div class="as-pic">
                             <!-- <img src="img/agents/agent-1.jpg" alt=""> -->
                                 <div class="rating-point">
-                                    4.5
+                                    {{vendor.rating}}
                                 </div>
                             </div>
                             <div class="as-text">
                                 <div class="at-title">
-                                    <h6>Ashton Kutcher</h6>
+                                    <h6>   {{vendor.first_name }}    {{vendor.last_name}}</h6>
                                     <div class="rating-star">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -206,13 +208,15 @@
                                     </div>
                                 </div>
                                 <ul>
-                                    <li>Address <span>Kucher@gmail.com</span></li>
-                                    <li>Phone <span>123-455-688</span></li>
+                                    <li>Address <span>{{vendor.address }} </span></li>
+                                    <li>Phone <span>{{vendor.phone_no }}</span></li>
                                 </ul>
                                 <a href="#" class="primary-btn">View profile</a>
                             </div>
                         </div>
                     </div>
+
+                    {% endfor %}
 <!-- First Brand End  -->
 
 
