@@ -20,3 +20,9 @@ class UserAdmin(ImportExportModelAdmin, DjangoUserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'user_type')
     search_fields = ('email', 'first_name', 'last_name', 'user_type')
     ordering = ('email', )
+
+
+# class VendorAdmin(admin.ModelAdmin):
+#      list_display = ('email', 'first_name', 'last_name', 'user_type')
+
+admin.site.register(Vendor)

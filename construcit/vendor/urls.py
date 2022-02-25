@@ -9,6 +9,6 @@ urlpatterns = [
     path('dashboard', admin_dashboard, name='admin_dashboard'),
     path('vendor/lists', vendor_List, name='vendor_list'),
     path('vendor/setup', vendor_Setup, name='vendor_setup'),
-     path('vendor/setup/<int:pk>/', vendor_Setup, name='vendor_update'),
-    path('vendor/delete/<int:pk>/', vendor_Setup, name='vendor_delete'),
+    path('vendor/setup/<int:pk>/', vendor_Update, name='vendor_update'),
+    path('vendor/delete/<int:pk>/', vendor_Delete, name='vendor_delete'),
 ]
