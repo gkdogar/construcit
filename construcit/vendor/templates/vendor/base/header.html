@@ -16,7 +16,7 @@
             </li>
 
             <li class="sidebar-item" id="settings">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" href="{% url 'vendor:admin_setting' %}">
                     <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
                 </a>
             </li>
@@ -67,7 +67,7 @@
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/defaulters/">Defaulters</a></li>#}
                 </ul>
             </li> {% endcomment %}
-             <li class="sidebar-item" id="customer_page">
+             {% comment %} <li class="sidebar-item" id="customer_page">
                 <a data-target="#customer_control" data-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="users"></i> <span
                         class="align-middle">Customer Action</span>
@@ -82,7 +82,7 @@
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/return/">Returned to sellerfor Reviews</a></li>#}
                     {#              <li class="sidebar-item"><a class="sidebar-link" href="/seller/admin/defaulters/">Defaulters</a></li>#}
                 </ul>
-            </li>
+            </li> {% endcomment %}
 
 
             {% comment %} <li class="sidebar-header active" id ="product_tabs">
