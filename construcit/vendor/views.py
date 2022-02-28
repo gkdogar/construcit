@@ -47,6 +47,7 @@ def vendor_Setup(request):
             vendor_obj.address=request.POST.get('address', vendor_obj.address)
             vendor_obj.business_name=request.POST.get('business_name', vendor_obj.business_name)
             vendor_obj.business_logo=request.FILES.get('business_logo', vendor_obj.business_logo )
+            vendor_obj.videofile=request.FILES.get('videofile', vendor_obj.videofile)
             vendor_obj.rating=request.POST.get('rating', vendor_obj.rating)
             vendor_obj.is_active=request.POST.get('is_active') or False
 

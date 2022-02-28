@@ -57,6 +57,7 @@ class Vendor(models.Model):
     business_name = models.CharField(max_length=250, null=True)
     business_logo = models.ImageField(upload_to='vendImage/logo')
     rating = models.DecimalField(max_digits=7, default=0.00, decimal_places=2)
+    videofile = models.FileField(upload_to='landing/videos', null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

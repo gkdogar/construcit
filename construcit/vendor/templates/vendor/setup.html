@@ -48,55 +48,69 @@
        <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{vendor.email}}">
        
      </div>
-          
+     <div class="form-group">
+      <label for="exampleInputphone_no">Phone#</label>
+      <input type="text" class="form-control" id="phone_no"  name="phone_no"  value="{{vendor.phone_no}}">
+    </div>
+    <div class="form-group mt-1">
+      <label for="Address">Address</label>
+      {% comment %} <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> {% endcomment %}
+      <input type="text" class="form-control" id="address" name="address" value="{{vendor.address}}">
+    </div>
+    
+    <div class="form-group mt-1">
+      <label for="city">City</label>
+      {% comment %} <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> {% endcomment %}
+      <input type="text" class="form-control" id="City" name="city" value="{{vendor.city}}">
+    </div>
    
       </div>
       <div class="col-4">
       
 
            
-        <div class="form-group mt-1">
-          <label for="exampleInputphone_no">Phone#</label>
-          <input type="text" class="form-control" id="phone_no"  name="phone_no"  value="{{vendor.phone_no}}">
-        </div>
-              <div class="form-group mt-1">
-                <label for="Address">Address</label>
-                {% comment %} <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> {% endcomment %}
-                <input type="text" class="form-control" id="address" name="address" value="{{vendor.address}}">
-              </div>
-              
-              <div class="form-group mt-1">
-                <label for="city">City</label>
-                {% comment %} <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> {% endcomment %}
-                <input type="text" class="form-control" id="City" name="city" value="{{vendor.city}}">
-              </div>
+      
+            
 
-
+              <div class="form-group mt-1">
+                <label for="business_name">Business Name</label>
+                <input type="text" class="form-control" id="business_name"  name="business_name" value="{{vendor.business_name}}">
+              </div>
+              <div class="form-group mt-1">
+                <label for="rating">Rating</label>
+                <input type="text" class="form-control" id="rating" aria-describedby="rating" name="rating"
+                      value="{{vendor.rating}}">
+            </div>
+            <div class="form-group mt-1">
+              <label for="exampleInputlast_name">Business Logo</label>
+                  <input type="file" onchange="preview()" name="business_logo" value="{{ vendor.business_logo }}">
+                       {% if vendor.business_logo %}
+                            <img id="frame" src="{{ vendor.business_logo.url }}" name="business_logo" width="200px" height="200px"/>
+                        {% else %}
+                            <img id="frame" src="" name="business_logo" width="200px" height="200px"/>
+                        {% endif %}
+            </div>
+           
+          
 
            
       </div>
       <div class="col-4">
 
    
-        <div class="form-group mt-1">
-            <label for="business_name">Business Name</label>
-            <input type="text" class="form-control" id="business_name"  name="business_name" value="{{vendor.business_name}}">
-          </div>
-          <div class="form-group mt-1">
-            <label for="rating">Rating</label>
-            <input type="text" class="form-control" id="rating" aria-describedby="rating" name="rating"
-                  value="{{vendor.rating}}">
+      
+        <div class="form-group mt-2">
+          <label for="exampleInputVideoUpload">Video Upload</label>
+          <input type="file" class="form-control" name="videofile"
+                value="{{ vendor.videofile.url }}"
+                id="fileUpload" accept="video/mp4,video/x-m4v,video/*">
+                <video autoplay muted loop  width="320" height="240" controls>
+                  <source src="{{vendor.videofile.url}}" type="video/mp4">
+            </video>
         </div>
-        <div class="form-group mt-1">
-          <label for="exampleInputlast_name">Business Logo</label>
-              <input type="file" onchange="preview()" name="business_logo" value="{{ vendor.business_logo }}">
-                   {% if vendor.business_logo %}
-                        <img id="frame" src="{{ vendor.business_logo.url }}" name="business_logo" width="200px" height="200px"/>
-                    {% else %}
-                        <img id="frame" src="" name="business_logo" width="200px" height="200px"/>
-                    {% endif %}
-        </div>
-         
+       
+
+       
           <div class="form-check mt-4">
             <input type="checkbox" class="form-check-input checkbox" id="is_active"
             name="is_active" {% if vendor.is_active %} checked
