@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from vendor.models.user_manager import *
 from django.utils.translation import gettext_lazy as _
-import jwt
+
 from django.conf import settings
 from datetime import datetime, timedelta
 
@@ -34,11 +34,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    @property
-    def token(self):
-        token = jwt.encode({'email': self.email, 'exp': datetime.utcnow() + timedelta(minutes=15)}, settings.SECRET_KEY,
-                           algorithm='HS256')
-        return token
+   
 
     objects = UserManager()
 
